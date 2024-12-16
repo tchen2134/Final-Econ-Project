@@ -5,9 +5,11 @@ import random
 from discord.ext import commands
 from datetime import datetime, timedelta
 
+def get_token_from_file():
+    with open("dtoken.txt", "r") as file:
+        return file.read().strip()
 # Create a file to store user data
 DATA_FILE = "data.json"
-
 def load_data():
     if os.path.exists(DATA_FILE):
         try:
@@ -266,4 +268,6 @@ async def work(ctx):
     save_data(user_data)
     await ctx.send(f"{ctx.author.mention}, you worked and earned {earnings} coins!")
 
-bot.run('MTMxMjE4MDA1MTg2OTE3MTcyMg.GnLnQd.qy2hP6Ou2frcWQgt4PnbxCfpKIhqZQJsWXLXjU')
+if __name__ == "__main__":
+    token = get_token_from_file()
+    bot.run(dtoken)
