@@ -4,7 +4,7 @@ import json
 import random
 from discord.ext import commands
 from datetime import datetime, timedelta
-
+#token file(its uploaded as private)
 def get_token_from_file():
     with open("dtoken.txt", "r") as file:
         return file.read().strip()
